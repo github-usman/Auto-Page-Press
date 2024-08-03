@@ -27,7 +27,8 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1",
-    "validator": "^13.12.0"
+    "validator": "^13.12.0",
+    "wordpress": "^1.4.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",

@@ -1,5 +1,5 @@
-import catchAysncErrors from "../../middlewares/catchAysncErrors.js";
-import userModel from "../../models/user.model.js";
+import catchAysncErrors from "../middlewares/catchAysncErrors.js";
+import userModel from "../models/user.model.js";
 
 // Get all user
 

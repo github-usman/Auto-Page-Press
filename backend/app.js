@@ -5,6 +5,7 @@ import cors from "cors";
 import greeting from "./routes/greeting.route.js";
 import userRoute from "./routes/user.route.js";
 import adminRoute from "./routes/admin.route.js";
+import wpTemplateRoute from "./routes/wp-template.route.js";
 import connectMongoDB from "./database/db.js";
 import customErrorMiddleware from "./middlewares/customErrorMiddleware.js";
 
@@ -18,6 +19,7 @@ app.use(cors());
 app.use("", greeting);
 app.use("/user", userRoute);
 app.use("/admin", adminRoute);
+app.use("/wp-template", wpTemplateRoute);
 app.use(customErrorMiddleware);
 
 export default app;
