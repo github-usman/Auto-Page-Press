@@ -3,8 +3,8 @@ import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
-    <div className="max-w-screen-mxl mx-auto pb-[1rem] border-solid px-4 md:px-6   flex justify-between text-[#9a9797]">
-      <p>
+    <div className="max-w-screen-mxl mx-auto pb-[1rem] border-solid px-4 md:px-6  flex-col md:flex-row items-center flex justify-between text-[#9a9797]">
+      <p className="text-center">
         Copyright © 2024 AutoPagePress Help Center | Terms | Privacy Policy
       </p>
       <div className="flex gap-[0.7rem] items-center">

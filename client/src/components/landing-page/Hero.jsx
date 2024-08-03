@@ -16,7 +16,7 @@ const Hero = () => {
       />
       <img
         src={money_2}
-        className="h-auto max-w-[140px] w-full absolute -z-10 top-0 md:-top-5 right-[30%]"
+        className="h-auto max-w-[140px] w-full absolute -z-10 top-0 md:-top-5 right-[24%]"
         alt="money on2"
       />
       <img
@@ -45,7 +45,7 @@ const Hero = () => {
       <div className="bg-[#0c0a0a00] transition-transform duration-300  w-[100%] lg:w-[58%] lg:h-[100%]">
         <img
           src={money_4}
-          className="h-auto max-w-[140px] w-full absolute z-10 bottom-0 md:bottom-[4%] left-[10%] md:left-[48%]"
+          className="h-auto max-w-[140px] w-full absolute z-10 bottom-0 md:bottom-[4%] right-[70%] md:right-[35%]"
           alt="money on1"
         />
 
@@ -54,11 +54,11 @@ const Hero = () => {
           className="h-auto max-w-[140px] w-full absolute -z-10 bottom-[35%] right-0"
           alt="money on2"
         />
-        <div className="bg-inherit flex justify-start items-center h-full w-full">
+        <div className="bg-inherit flex justify-start items-center h-[120%] lg:w-[120%]">
           <img
             src={phone__and_couple}
             alt="phone and couple"
-            className="object-contain z-0 bg-inherit -mb-6"
+            className="object-contain z-0 bg-inherit "
           />
         </div>
       </div>
