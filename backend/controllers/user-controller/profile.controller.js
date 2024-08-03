@@ -5,7 +5,7 @@ import sendToken from "../../utils/jwt-tokens.js";
 
 // register user
 export const registerUser = catchAysncErrors(async (req, res, next) => {
-  const { first_name, last_name, email, password } = req.body;
+  const { name, email, password } = req.body;
   const isExist = await userModel.findOne({ email });
   if (isExist) {
     return next(
@@ -16,8 +16,7 @@ export const registerUser = catchAysncErrors(async (req, res, next) => {
     );
   }
   const user = await userModel.create({
-    first_name,
-    last_name,
+    name,
     email,
     password,
   });
@@ -58,8 +57,7 @@ export const profileUser = catchAysncErrors(async (req, res, next) => {
 // update user
 export const updateUser = catchAysncErrors(async (req, res, next) => {
   const newData = {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
+    name: req.body.name,
     email: req.body.email,
     passwor: req.body.password,
   };

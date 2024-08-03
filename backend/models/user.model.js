@@ -6,17 +6,11 @@ import { jwtExpire, jwtSecret } from "../config/env.config.js";
 
 const userSchema = new mongoose.Schema(
   {
-    first_name: {
+    name: {
       type: String,
-      required: [true, "Please Enter Your First Name"],
-      maxLength: [30, "Name cannot exceed 30 characters"],
-      minLength: [3, "First Name should not have less than 3 characters"],
-    },
-    last_name: {
-      type: String,
-      required: [true, "Please Enter Your Last Name"],
-      maxLength: [30, "Name cannot exceed 30 characters"],
-      minLength: [3, "Last name should not have less than 3 characters"],
+      required: [true, "Please Enter Your Name"],
+      maxLength: [30, "Name cannot exceed 50 characters"],
+      minLength: [3, "Name should not have less than 3 characters"],
     },
     email: {
       type: String,

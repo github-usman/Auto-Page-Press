@@ -36,10 +36,10 @@ const ClientTestimonials = () => {
     arrows: false,
     infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 0.5,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 4000,
+    speed: 2000,
+    autoplaySpeed: 2000,
     cssEase: 'linear',
     responsive: [
       {

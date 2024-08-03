@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainLayout from './Layouts/MainLayouts';
 import LandingPage from './pages/LandingPage';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <MainLayout>
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </MainLayout>
       </Suspense>

@@ -1,8 +1,9 @@
 import React from 'react';
-import Hero from '../components/landing-page/Hero';
-import Faq from '../components/landing-page/Faq';
 import ClientTestimonials from '../components/landing-page/ClientTestimonials';
+import Faq from '../components/landing-page/Faq';
+import Hero from '../components/landing-page/Hero';
 import HowToUse from '../components/landing-page/HowToUse';
+import LoginRegiAcitve from '../components/reusable-component/LoginRegiAcitve';
 
 const LandingPage = () => {
   return (
@@ -17,6 +18,7 @@ const LandingPage = () => {
       <div className="px-4 md:px-6">
         <Faq />
       </div>
+      <LoginRegiAcitve />
     </div>
   );
 };
