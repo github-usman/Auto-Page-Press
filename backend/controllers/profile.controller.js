@@ -1,7 +1,7 @@
-import catchAysncErrors from "../../middlewares/catchAysncErrors.js";
-import userModel from "../../models/user.model.js";
-import ErrorHandler from "../../utils/error-handler.js";
-import sendToken from "../../utils/jwt-tokens.js";
+import catchAysncErrors from "../middlewares/catchAysncErrors.js";
+import userModel from "../models/user.model.js";
+import ErrorHandler from "../utils/error-handler.js";
+import sendToken from "../utils/jwt-tokens.js";
 
 // register user
 export const registerUser = catchAysncErrors(async (req, res, next) => {

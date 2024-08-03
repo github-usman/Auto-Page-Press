@@ -6,7 +6,7 @@ import {
   profileUser,
   registerUser,
   updateUser,
-} from "../controllers/user-controller/profile.controller.js";
+} from "../controllers/profile.controller.js";
 import { isAuthenticatedUser } from "../middlewares/auth.js";
 const router = express();
 
