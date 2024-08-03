@@ -38,7 +38,8 @@ jobs:
       - name: Install dependencies Client && Server
         run: |
           npm install
-
+          cd client
+          npm install
       - name: Run lint
         run: npm run lint
 
