@@ -51,3 +51,21 @@ body {
     @apply max-w-screen-mxl m-auto border-solid px-4 md:px-6;
   }
 }
+
+/* animation */
+.repel__effect {
+  animation: repel 1s infinite;
+  border-radius: 8px;
+}
+@keyframes repel {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  0% {
+    box-shadow: 0 0 1px 1px #eeeef0;
+  }
+  100% {
+    box-shadow: 0 0 1px 20px #fbd83c00;
+  }
+}

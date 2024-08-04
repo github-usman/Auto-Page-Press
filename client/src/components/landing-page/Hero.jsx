@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import phone__and_couple from './../../assets/hero/phone__and_couple.png';
 import money_1 from './../../assets/hero/money_1.png';
 import money_2 from './../../assets/hero/money_2.png';
@@ -38,9 +39,15 @@ const Hero = () => {
             <br className="hidden lg:inline" /> Fully
             <span className=" text-[1.5rem] lg:text-5xl font-semibold text-dblue bg-inherit">
               &nbsp; customize
-            </span>{' '}
+            </span>
           </p>
         </div>
+        <Link
+          to={'/dashboard'}
+          className="repel__effect border-[1px] px-2 py-1 font-semibold rounded-lg"
+        >
+          Create Pages
+        </Link>
       </div>
       <div className="bg-[#0c0a0a00] transition-transform duration-300  w-[100%] lg:w-[58%] lg:h-[100%]">
         <img
