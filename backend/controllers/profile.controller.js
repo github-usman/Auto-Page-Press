@@ -36,7 +36,7 @@ export const loginUser = catchAysncErrors(async (req, res, next) => {
   if (!user) {
     return next(new ErrorHandler("Invalid email or password", 401));
   }
-  const isAuthenticatedUser = user.comparePassword(password);
+  const isAuthenticatedUser = await user.comparePassword(password);
 
   if (!isAuthenticatedUser) {
     return next(new ErrorHandler("Invalid email or password", 401));

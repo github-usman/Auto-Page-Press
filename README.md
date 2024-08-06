@@ -1,3 +1,8 @@
+## Porject completed till following states
+
+
+![state](./client/public/assets/github_states.png);
+
 ## backend
 
 ```bash

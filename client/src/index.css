@@ -70,8 +70,6 @@ body {
   }
 }
 
-
-
 /* side bar */
 
 body::-webkit-scrollbar {
@@ -83,7 +81,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #B7F36D;
+  background: #b7f36d;
   border-radius: 5px;
 }
 

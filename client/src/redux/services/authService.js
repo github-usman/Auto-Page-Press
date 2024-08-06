@@ -1,6 +1,7 @@
 import axiosInstance from '../../config/axiosInstance';
 
-export const postService = async (endpoint, queryParams) => {
+// for wp
+export const postServiceWp = async (endpoint, queryParams) => {
   try {
     const { username, baseUrl, password, title, slug, pages, body } =
       queryParams;
@@ -16,6 +17,12 @@ export const postService = async (endpoint, queryParams) => {
 
     return response;
   } catch (error) {
-    throw new Error(error || 'An error occurred');
+    return error || 'An error occurred ';
   }
+};
+
+// user/admin authorization
+export const postService = async (endpoint, queryParams) => {
+  const response = await axiosInstance.post(endpoint, queryParams);
+  return response.data;
 };
