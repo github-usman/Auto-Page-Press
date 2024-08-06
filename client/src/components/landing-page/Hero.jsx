@@ -5,7 +5,7 @@ import money_2 from './../../assets/hero/money_2.png';
 import money_3 from './../../assets/hero/money_3.png';
 import money_4 from './../../assets/hero/money_4.png';
 import money_5 from './../../assets/hero/money_5.png';
-import phone__and_couple from './../../assets/hero/phone__and_couple.avif';
+import phone__and_couple from './../../assets/hero/phone__and_couple.png';
 import placeholderImage from './../../assets/hero/phone__and_couple_x1.png';
 
 const Hero = () => {
