@@ -8,7 +8,7 @@ import AdvancedField from '../components/dashboard/AdvancedField';
 const Dashboard = () => {
   const [errorsDashb, serErrorsDashb] = useState({});
   return (
-    <div className="flex flex-col gap-[1rem] my-[1rem] px-4 md:px-6">
+    <div className="max-w-screen-mxl w-full mx-auto flex flex-col gap-[1rem] my-[1rem] px-4 md:px-6">
       <WpCredetials errorsDashb={errorsDashb} />
       <MetaDescAndContent errorsDashb={errorsDashb} />
       <Body errorsDashb={errorsDashb} />

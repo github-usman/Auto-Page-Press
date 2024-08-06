@@ -24,7 +24,7 @@ const Hero = () => {
       />
       <img
         src={money_2}
-        className="h-auto max-w-[140px] w-full absolute -z-10 top-0 md:-top-5 right-[24%]"
+        className="h-auto max-w-[140px] w-full absolute -z-10 top-0 md:-top-8 right-[26%]"
         alt="money on2"
       />
       <img
@@ -32,15 +32,15 @@ const Hero = () => {
         className="h-auto max-w-[140px] w-full absolute top-0 end-0"
         alt="money on3"
       />
-      <div className="flex flex-col gap-3 lg:gap-[40px] mt-[4rem] lg:mt-0 p-0 lg:p-2 items-center sm:items-start">
-        <div className="bg-inherit">
+      <div className="flex flex-col gap-3 lg:gap-[20px] mt-[4rem] lg:mt-0 p-0 lg:p-2 items-center sm:items-start">
+        <div className="bg-inherit lg:ms-5">
           <h1 className='text-[2.05rem] w-full lg:text-[3.4rem] mxl:text-[3.8rem] font-[700] font-["roboto"] lg:text-nowrap bg-inherit leading-none'>
-            1000+ pages in
+            1000+ pages in&nbsp;
             <br className="hidden lg:inline" />
             one Minute
           </h1>
         </div>
-        <div className="bg-inherit">
+        <div className="bg-inherit lg:ms-5">
           <p className='lg:text-[40px] text-[20px] font-["roboto"] bg-inherit'>
             This is free and
             <br className="hidden lg:inline" /> Fully
@@ -65,10 +65,10 @@ const Hero = () => {
 
         <img
           src={money_5}
-          className="h-auto max-w-[140px] w-full absolute -z-10 bottom-[35%] right-0"
+          className="h-auto max-w-[140px] w-full absolute -z-10 bottom-[35%] right-[5%]"
           alt="money on2"
         />
-        <div className="bg-inherit flex justify-start items-center h-[120%] lg:w-[120%]">
+        <div className="bg-inherit flex justify-start items-center h-[100%] lg:w-[100%]">
           <img
             src={imageLoaded ? phone__and_couple : placeholderImage}
             alt="phone and couple"

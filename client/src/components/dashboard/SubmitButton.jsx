@@ -48,7 +48,7 @@ const SubmitButton = ({ serErrorsDashb }) => {
     <div className="flex justify-center">
       <button
         type="submit"
-        className="max-w-sm w-full bg-dblue text-white border-[#9a979792] border text-[15px] rounded-lg font-bold py-2 referal__benefits__shadow__all_program"
+        className="max-w-sm w-full backdrop-blur-3xl hover:bg-[#6b8ce18b] bg-dblue text-white border-[#9a979792] border text-[15px] rounded-lg font-bold py-2 referal__benefits__shadow__all_program"
         onClick={handleSubmit}
       >
         Create Your Pages
