@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import validator from 'validator';
+import { useDispatch, useSelector } from 'react-redux';
 import cross from '../assets/log-regi/cross.svg';
 import log_regi_bg from '../assets/log-regi/log-regi-bg.png';
 import warning from '../assets/log-regi/warning.png';
@@ -11,52 +12,42 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
+  const {
+    isAuthenticated,
+    error: formError,
+    isLoading,
+  } = useSelector((state) => state.auth);
 
-  // const { user } = useSelector((state) => state.auth);
-
-  // const emailRegex =
-  //   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const isEmail = validator.isEmail(email);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setLoading(true);
-
-    // validation error
-    // const newErrors = {};
-    // if (name === '') newErrors.name = 'Name is required';
-    // if (email === '' || !email.match(emailRegex))
-    //   newErrors.email = 'Valid email is required';
-    // if (setPassword.length < 10)
-    //   newErrors.setPassword = 'Valid phone number is required';
-    // newErrors.refereeEmail =
-    //   'Your email and your friend email should be diffrent';
-
-    // if (Object.keys(newErrors).length > 0) {
-    //   setErrors(newErrors);
-    // setLoading((val) => !val);
-    // } else {
-    //   setErrors({});
-    const referalData = {
-      email,
-      password,
-    };
-    try {
-      dispatch(loginUser(referalData));
-
-      // if (user.success) {
-      //   toggleModal();
-      //   // setLoading((val) => !val); // success loading spineer off
-      //   // setSuccesstLoading((val) => !val);
-      // } else {
-      //   // setLoading((val) => !val); // response promise resolve loading spineer off
-      //   // setFailed(response.message); // failed due some reason
-      // }
-    } catch (error) {
-      setErrors(error); // response promise resolve loading spineer off
-      // setFailed('server issue please try again'); // failed due some reason
+    const newErrors = {};
+    if (email === '' || !isEmail) newErrors.email = 'Valid email is required';
+    if (password.length < 8)
+      newErrors.password = 'Password must be at least 8 characters';
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      setErrors({});
+      const loginData = {
+        email,
+        password,
+      };
+      try {
+        await dispatch(loginUser(loginData)).unwrap();
+      } catch (error) {
+        setErrors({ form: 'Login failed. Please try again.' });
+      }
     }
-    // }
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      console.log('presses');
+      dispatch(toggleModal(null));
+    }
+  }, [isAuthenticated, dispatch]);
 
   return (
     <div className="fixed inset-0 overflow-y-hidden flex items-center justify-center bg-[#00000080] backdrop-blur-[2px] bg-opacity-70  z-50">
@@ -66,7 +57,7 @@ const Login = () => {
       >
         <button
           className="absolute ml-5 text-black right-0 top-[-40px] w-8 h-8 rounded-md bg-white"
-          onClick={() => dispatch(toggleModal('login'))}
+          onClick={() => dispatch(toggleModal(null))}
         >
           <img src={cross} alt="close button" />
         </button>
@@ -134,8 +125,18 @@ const Login = () => {
               className="w-full bg-dblue text-white border-[#9a979792] border text-[15px] rounded-lg font-bold py-2 referal__benefits__shadow__all_program"
               onClick={handleSubmit}
             >
-              Login
+              {isLoading ? 'Logging in...' : 'Login'}
             </button>
+            {formError && (
+              <p className="text-[14px] text-[red] flex items-center gap-1 justify-center">
+                <img
+                  src={warning}
+                  className="h-[14px] w-[14px]"
+                  alt="warning"
+                />{' '}
+                {formError}
+              </p>
+            )}
             <div className="flex items-center gap-5">
               <div className="h-[1px] bg-[#9a979792] w-full my-5 relative"></div>
               <p className="">OR</p>

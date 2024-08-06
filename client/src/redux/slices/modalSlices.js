@@ -7,8 +7,9 @@ const modalSlice = createSlice({
   },
   reducers: {
     toggleModal: (state, action) => {
-      state.activeModal =
-        state.activeModal === action.payload ? null : action.payload;
+      console.log('Current activeModal:', state.activeModal);
+      console.log('Toggling with payload:', action.payload);
+      state.activeModal = action.payload;
     },
   },
 });
