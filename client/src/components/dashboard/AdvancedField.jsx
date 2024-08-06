@@ -23,7 +23,7 @@ const AdvancedField = () => {
         onClick={!openItem ? undefined : handleItemClick}
       >
         <h1 className=" font-bold text-[18px] text-center w-fit lg:m-auto">
-          Advance Customfield
+          Advance Customfield <sup>(Optional)</sup>
         </h1>
         <div
           className={`${openItem === true ? 'rotate-180 transition-max-rotate duration-300 ease-in-out' : 'rotate-0 transition-max-rotate duration-300 ease-in-out'}`}

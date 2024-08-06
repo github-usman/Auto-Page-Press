@@ -23,7 +23,7 @@ const initialState = {
   metaDescAndContent: {
     title: localStorage.getItem('title') || '',
     slug: localStorage.getItem('slug') || '',
-    pages: localStorage.getItem('pages') || [],
+    pages: [],
   },
   body: localStorage.getItem('body') || '',
   advancedField: {},

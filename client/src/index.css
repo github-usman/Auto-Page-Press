@@ -69,3 +69,24 @@ body {
     box-shadow: 0 0 1px 20px #fbd83c00;
   }
 }
+
+
+
+/* side bar */
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1c467000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #B7F36D;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #8dd930;
+}

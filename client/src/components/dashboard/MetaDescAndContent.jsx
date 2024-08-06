@@ -125,9 +125,9 @@ const MetaDescAndContent = () => {
             <button
               type="button"
               onClick={() => dispatch(addPage())}
-              className="bg-blue-500 text-white p-2 rounded-lg w-fit"
+              className="bg-blue-500 text-white rounded-lg w-fit"
             >
-              <IoIosAddCircle className="text-[#9a9797] w-fit hover:text-white text-[22px]" />
+              <IoIosAddCircle className="text-[#9a9797] w-fit hover:text-white text-[28px]" />
             </button>
           </div>
           <p
