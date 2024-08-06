@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import warning from '../../assets/log-regi/warning.png';
 import { updateWpCredentials } from '../../redux/slices/wordpresFormSlice';
 
-const WpCredetials = () => {
+const WpCredetials = ({ errorsDashb }) => {
   const dispatch = useDispatch();
   const wpCredentials = useSelector(
     (state) => state.wordpressForm.wpCredentials
@@ -13,9 +13,6 @@ const WpCredetials = () => {
   const handleChange = (e) => {
     dispatch(updateWpCredentials({ [e.target.name]: e.target.value }));
   };
-
-  const [errors] = useState({});
-
   const [openItem, setOpenItem] = useState(true);
 
   const handleItemClick = () => {
@@ -59,10 +56,10 @@ const WpCredetials = () => {
             id="username"
           />
           <p
-            className={`text-[12px] text-[red] opacity-${errors.username ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.username ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.username}
+            {errorsDashb.username}
           </p>
         </div>
         <div className="flex flex-col">
@@ -83,10 +80,10 @@ const WpCredetials = () => {
             id="baseUrl"
           />
           <p
-            className={`text-[12px] text-[red] opacity-${errors.baseUrl ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.baseUrl ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.baseUrl}
+            {errorsDashb.baseUrl}
           </p>
         </div>
         <div className="flex flex-col">
@@ -107,10 +104,10 @@ const WpCredetials = () => {
             id="password"
           />
           <p
-            className={`text-[12px] text-[red] opacity-${errors.password ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.password ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.password}
+            {errorsDashb.password}
           </p>
         </div>
       </div>

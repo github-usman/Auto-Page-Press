@@ -6,7 +6,6 @@ export const createPages = createAsyncThunk(
   'auth/register_user',
   async (queryParams, { rejectWithValue }) => {
     try {
-      console.log(queryParams, 'query parama svalue');
       return await postService('/wp-template/create', queryParams);
     } catch (error) {
       return rejectWithValue(error.message || 'An error occurred');
