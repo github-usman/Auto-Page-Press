@@ -7,7 +7,7 @@ const AdvancedField = () => {
   const [fieldValue, setFieldValue] = useState('');
   const [errors] = useState({});
 
-  const [openItem, setOpenItem] = useState(true);
+  const [openItem, setOpenItem] = useState(false);
 
   const handleItemClick = () => {
     setOpenItem((val) => !val);

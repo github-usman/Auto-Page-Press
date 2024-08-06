@@ -8,7 +8,7 @@ const Body = () => {
   const dispatch = useDispatch();
   const bodyContent = useSelector((state) => state.wordpressForm.body);
   const errors = {};
-  const [openItem, setOpenItem] = useState(false);
+  const [openItem, setOpenItem] = useState(true);
 
   const textareaRef = useRef(null);
 

@@ -1,9 +1,18 @@
-## Porject completed till following states
+```
 
+# server
+npm install
+npm run lint:fix
+npm run format
+num run dev | npm start
 
-![state](./client/public/assets/github_states.png);
+# Frontend
+cd client
+npm install
+npm start
+```
 
-## backend
+## backend structure
 
 ```bash
 routes |--/user/
@@ -28,7 +37,7 @@ routes |--/user/
             |--/update
 ```
 
-## Frontend
+## Frontend structure
 
 ```bash
 routes  |--/landing/
