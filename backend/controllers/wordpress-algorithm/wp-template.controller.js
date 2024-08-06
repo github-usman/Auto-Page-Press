@@ -12,8 +12,6 @@ async function createPage(
   keywords,
   customFiledTitle
 ) {
-  console.log("Creating page for", dynamicContent);
-
   // Dynamically construct customFields array based on provided values
   const customFields = [];
   if (customMeta)

@@ -10,12 +10,11 @@ import {
   removePage,
 } from '../../redux/slices/wordpresFormSlice';
 
-const MetaDescAndContent = () => {
+const MetaDescAndContent = ({ errorsDashb }) => {
   const dispatch = useDispatch();
   const metaDescAndContent = useSelector(
     (state) => state.wordpressForm.metaDescAndContent
   );
-  const [errors] = useState({});
   const [openItem, setOpenItem] = useState(true);
 
   const handleChange = (e) => {
@@ -63,10 +62,10 @@ const MetaDescAndContent = () => {
             id="title"
           />
           <p
-            className={`text-[12px] text-[red] opacity-${errors.title ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.title ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.title}
+            {errorsDashb.title}
           </p>
         </div>
 
@@ -85,10 +84,10 @@ const MetaDescAndContent = () => {
             id="slug"
           />
           <p
-            className={`text-[12px] text-[red] opacity-${errors.slug ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.slug ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.slug}
+            {errorsDashb.slug}
           </p>
         </div>
 
@@ -131,10 +130,10 @@ const MetaDescAndContent = () => {
             </button>
           </div>
           <p
-            className={`text-[12px] text-[red] opacity-${errors.pages ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.pages ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.pages}
+            {errorsDashb.pages}
           </p>
         </div>
       </div>

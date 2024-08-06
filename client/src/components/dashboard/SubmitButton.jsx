@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createPages } from '../../redux/slices/wordpresFormSlice';
 
-const SubmitButton = () => {
+const SubmitButton = ({ serErrorsDashb }) => {
   const dispatch = useDispatch();
   const wpCredentials = useSelector(
     (state) => state.wordpressForm.wpCredentials
@@ -13,14 +13,35 @@ const SubmitButton = () => {
   const body = useSelector((state) => state.wordpressForm.body);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const newErrors = {};
+    if (wpCredentials.username === '')
+      newErrors.username = 'Please Enter user name';
+    if (wpCredentials.baseUrl === '')
+      newErrors.baseUrl = 'Please Enter your Website base url';
+    if (wpCredentials.password === '')
+      newErrors.password = 'Please Enter your password';
+    if (metaDescAndContent.title === '')
+      newErrors.title = 'Please Enter A title for your website';
+    if (metaDescAndContent.slug === '')
+      newErrors.slug = 'Please Enter slug for routing params for your web.';
+    if (metaDescAndContent.pages.length < 1)
+      newErrors.pages = 'Please Enter Dynamic Value for your particular pages';
+    if (body === '')
+      newErrors.bodyContent =
+        'Please Enter wordpress body content information here.';
 
-    const queryParams = {
-      ...wpCredentials,
-      ...metaDescAndContent,
-      body,
-    };
+    if (Object.keys(newErrors).length > 0) {
+      serErrorsDashb(newErrors);
+    } else {
+      serErrorsDashb({});
+      const queryParams = {
+        ...wpCredentials,
+        ...metaDescAndContent,
+        body,
+      };
 
-    dispatch(createPages(queryParams));
+      dispatch(createPages(queryParams));
+    }
   };
 
   return (

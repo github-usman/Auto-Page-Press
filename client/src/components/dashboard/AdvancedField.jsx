@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import warning from '../../assets/log-regi/warning.png';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const AdvancedField = () => {
   const [fieldName, setFieldName] = useState('');
   const [fieldValue, setFieldValue] = useState('');
-  const [errors] = useState({});
 
   const [openItem, setOpenItem] = useState(false);
 
@@ -49,12 +47,6 @@ const AdvancedField = () => {
             name="fieldName"
             id="fieldName"
           />
-          <p
-            className={`text-[12px] text-[red] opacity-${errors.fieldName ? '100' : '0'} flex items-center gap-1 ps-2`}
-          >
-            <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.fieldName}
-          </p>
         </div>
 
         <div className="flex flex-col">
@@ -74,12 +66,6 @@ const AdvancedField = () => {
             name="fieldValue"
             id="fieldValue"
           />
-          <p
-            className={`text-[12px] text-[red] opacity-${errors.fieldValue ? '100' : '0'} flex items-center gap-1 ps-2`}
-          >
-            <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.fieldValue}
-          </p>
         </div>
       </div>
     </div>

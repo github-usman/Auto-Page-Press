@@ -4,10 +4,9 @@ import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBody } from '../../redux/slices/wordpresFormSlice';
 
-const Body = () => {
+const Body = ({ errorsDashb }) => {
   const dispatch = useDispatch();
   const bodyContent = useSelector((state) => state.wordpressForm.body);
-  const errors = {};
   const [openItem, setOpenItem] = useState(true);
 
   const textareaRef = useRef(null);
@@ -63,10 +62,10 @@ const Body = () => {
             rows={6}
           />
           <p
-            className={`text-[12px] text-[red] opacity-${errors.bodyContent ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.bodyContent ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errors.bodyContent}
+            {errorsDashb.bodyContent}
           </p>
         </div>
       </div>

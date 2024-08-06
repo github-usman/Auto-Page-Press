@@ -44,7 +44,6 @@ const Login = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      console.log('presses');
       dispatch(toggleModal(null));
     }
   }, [isAuthenticated, dispatch]);
