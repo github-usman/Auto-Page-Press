@@ -16,7 +16,7 @@ const MetaDescAndContent = () => {
     (state) => state.wordpressForm.metaDescAndContent
   );
   const [errors] = useState({});
-  const [openItem, setOpenItem] = useState(false);
+  const [openItem, setOpenItem] = useState(true);
 
   const handleChange = (e) => {
     dispatch(updateMetaDescAndContent({ [e.target.name]: e.target.value }));
