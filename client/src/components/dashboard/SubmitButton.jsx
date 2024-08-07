@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
+import warning from '../../assets/log-regi/warning.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { createPages } from '../../redux/slices/wordpresFormSlice';
 
 const SubmitButton = ({ serErrorsDashb }) => {
   const dispatch = useDispatch();
+  const { isLoading, error } = useSelector((state) => state.wordpressForm);
   const wpCredentials = useSelector(
     (state) => state.wordpressForm.wpCredentials
   );
@@ -36,6 +38,7 @@ const SubmitButton = ({ serErrorsDashb }) => {
 
     if (Object.keys(newErrors).length > 0) {
       serErrorsDashb(newErrors);
+      console.log(bodyContent, 'submit body');
     } else {
       serErrorsDashb({});
       const queryParams = {
@@ -57,8 +60,16 @@ const SubmitButton = ({ serErrorsDashb }) => {
         className="max-w-sm w-full backdrop-blur-3xl hover:bg-[#6b8ce18b] bg-dblue text-white border-[#9a979792] border text-[15px] rounded-lg font-bold py-2 referal__benefits__shadow__all_program"
         onClick={handleSubmit}
       >
-        Create Your Pages
+        {isLoading ? 'Wait Creating...' : 'Create Your Pages'}
       </button>
+      {error && (
+        <p
+          className={`text-[12px] text-[red] opacity-${error ? '100' : '0'} flex items-center gap-1 ps-2`}
+        >
+          <img src={warning} className="h-[12px] w-[12px]" alt="warning" />
+          {error}
+        </p>
+      )}
       {responses && (
         <button
           type="submit"
