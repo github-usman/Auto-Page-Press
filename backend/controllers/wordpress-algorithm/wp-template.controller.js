@@ -13,6 +13,18 @@ async function createPage(
   customFiledTitle
 ) {
   // Dynamically construct customFields array based on provided values
+  bodyContent = bodyContent.replace(/\${dynamicContent}/g, dynamicContent);
+  slug = slug.replace(/\${dynamicContent}/g, dynamicContent);
+  customMetaDesc = customMetaDesc.replace(
+    /\${dynamicContent}/g,
+    dynamicContent
+  );
+  keywords = keywords.replace(/\${dynamicContent}/g, dynamicContent);
+  customFiledTitle = customFiledTitle.replace(
+    /\${dynamicContent}/g,
+    dynamicContent
+  );
+
   const customFields = [];
   if (customMetaDesc)
     customFields.push({ key: "_yoast_wpseo_metadesc", value: customMetaDesc });
@@ -92,6 +104,7 @@ export const createPages = catchAysncErrors(async (req, res, next) => {
 
   try {
     const NoOfPages = [];
+
     for (const dynamicContent of pages) {
       NoOfPages.push(`Page : ${dynamicContent}`);
       const pageData = await createPage(
@@ -104,7 +117,11 @@ export const createPages = catchAysncErrors(async (req, res, next) => {
         customFiledTitle
       );
       if (mainTitle) {
-        await updatePageTitle(client, pageData, mainTitle);
+        const replacedMainTitle = mainTitle.replace(
+          /\${dynamicContent}/g,
+          dynamicContent
+        );
+        await updatePageTitle(client, pageData.id, replacedMainTitle);
       }
     }
     res.status(200).json({
