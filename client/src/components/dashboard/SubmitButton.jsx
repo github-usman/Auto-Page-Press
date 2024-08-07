@@ -71,13 +71,25 @@ const SubmitButton = ({ serErrorsDashb }) => {
         </p>
       )}
       {responses && (
-        <button
-          type="submit"
-          className=" w-full backdrop-blur-3xl hover:bg-[#62d4868b] bg-[#62d4868b] text-white border text-[15px]  font-bold py-2 referal__benefits__shadow__all_program  "
-          onClick={handleSubmit}
-        >
-          {responses.message}
-        </button>
+        <div className="flex flex-col">
+          <button
+            type="submit"
+            className=" w-full backdrop-blur-3xl hover:bg-[#62d4868b] bg-[#62d4868b] text-white border text-[15px]  font-bold py-2 referal__benefits__shadow__all_program  "
+          >
+            {responses.message}
+          </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {responses.createdPages.map((value, index) => (
+              <button
+                type="submit"
+                key={index}
+                className=" w-full backdrop-blur-3xl hover:bg-[#62d4868b] bg-[#62d4868b] text-white border text-[15px]  font-bold py-2 referal__benefits__shadow__all_program  "
+              >
+                {value}
+              </button>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );

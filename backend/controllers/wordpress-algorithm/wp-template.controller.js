@@ -51,7 +51,8 @@ export const createPages = catchAysncErrors(async (req, res, next) => {
     }
     res.status(200).json({
       success: true,
-      message: `Following pages have been created successfully -> ${NoOfPages.join(", ")}`,
+      message: `Following pages has been created successfully`,
+      createdPages: NoOfPages,
     });
   } catch (error) {
     next(error);

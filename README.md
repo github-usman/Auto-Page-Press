@@ -11,6 +11,11 @@ cd client
 npm install
 npm start
 ```
+## USES AND RESULTP  application and wordpress
+
+![](./client/public/assets/app.png)
+![](./client/public/assets/wp.png)
+![](./client/public/assets/wp_body.png)
 
 ## backend structure
 
