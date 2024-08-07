@@ -11,7 +11,8 @@ cd client
 npm install
 npm start
 ```
-## USES AND RESULTP  application and wordpress
+
+## USES AND RESULTP application and wordpress
 
 ![](./client/public/assets/app.png)
 ![](./client/public/assets/wp.png)

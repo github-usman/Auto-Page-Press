@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
-import warning from '../../assets/log-regi/warning.png';
+import warning from '../../assets/log-regi/warning.webp';
 import { updateWpCredentials } from '../../redux/slices/wordpresFormSlice';
 
 const WpCredetials = ({ errorsDashb }) => {

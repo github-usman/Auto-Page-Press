@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import warning from '../../assets/log-regi/warning.png';
+import warning from '../../assets/log-regi/warning.webp';
 import { useDispatch, useSelector } from 'react-redux';
 import { createPages } from '../../redux/slices/wordpresFormSlice';
 

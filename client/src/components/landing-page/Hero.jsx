@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import money_1 from './../../assets/hero/money_1.png';
-import money_2 from './../../assets/hero/money_2.png';
-import money_3 from './../../assets/hero/money_3.png';
-import money_4 from './../../assets/hero/money_4.png';
-import money_5 from './../../assets/hero/money_5.png';
-import phone__and_couple from './../../assets/hero/phone__and_couple.png';
-import placeholderImage from './../../assets/hero/phone__and_couple_x1.png';
+import money_1 from './../../assets/hero/money_1.webp';
+import money_2 from './../../assets/hero/money_2.webp';
+import money_3 from './../../assets/hero/money_3.webp';
+import money_4 from './../../assets/hero/money_4.webp';
+import money_5 from './../../assets/hero/money_5.webp';
+import phone__and_couple from './../../assets/hero/phone__and_couple.webp';
 
 const Hero = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
-
   return (
     <div className="custom-template custom-w relative m-auto md:h-[90%] items-center flex-col gap-3 lg:gap-[8rem] md:flex-row justify-center">
       <img
@@ -70,10 +63,9 @@ const Hero = () => {
         />
         <div className="bg-inherit flex justify-start items-center h-[100%] lg:w-[100%]">
           <img
-            src={imageLoaded ? phone__and_couple : placeholderImage}
+            src={phone__and_couple}
             alt="phone and couple"
             className="object-contain z-0 bg-inherit"
-            onLoad={handleImageLoad}
           />
         </div>
       </div>

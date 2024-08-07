@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import warning from '../../assets/log-regi/warning.png';
+import warning from '../../assets/log-regi/warning.webp';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBody } from '../../redux/slices/wordpresFormSlice';

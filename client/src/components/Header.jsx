@@ -3,7 +3,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { RxCross2, RxHamburgerMenu } from 'react-icons/rx';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 import { toggleModal } from '../redux/slices/modalSlices';
 import { logout } from '../redux/slices/authSlice';
 

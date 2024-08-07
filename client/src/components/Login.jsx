@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import validator from 'validator';
 import { useDispatch, useSelector } from 'react-redux';
-import cross from '../assets/log-regi/cross.svg';
-import log_regi_bg from '../assets/log-regi/log-regi-bg.png';
-import warning from '../assets/log-regi/warning.png';
+import { RxCross2 } from 'react-icons/rx';
+import log_regi_bg from '../assets/log-regi/log-regi-bg.webp';
+import warning from '../assets/log-regi/warning.webp';
 import { loginUser } from '../redux/slices/authSlice';
 import { toggleModal } from '../redux/slices/modalSlices';
 
@@ -55,10 +55,10 @@ const Login = () => {
         className=" bg-cover  bg-no-repeat custom-template  border-[1px] border-[#bfbabab4] border-solid sm:px-0  bg-opacity-50 max-w-[450px] w-[95%] sm:w-full  relative rounded-xl grid items-center"
       >
         <button
-          className="absolute ml-5 text-black right-0 top-[-40px] w-8 h-8 rounded-md bg-white"
+          className="absolute ml-5 text-black rounded-lg flex justify-center items-center right-0 top-[-40px] w-8 h-8  bg-white"
           onClick={() => dispatch(toggleModal(null))}
         >
-          <img src={cross} alt="close button" />
+          <RxCross2 size={24} />
         </button>
 
         <div className="shadow-lg py-5 px-5 ">

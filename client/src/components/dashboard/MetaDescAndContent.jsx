@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { IoIosAddCircle } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
-import warning from '../../assets/log-regi/warning.png';
+import warning from '../../assets/log-regi/warning.webp';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   updateMetaDescAndContent,
