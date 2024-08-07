@@ -7,15 +7,15 @@ async function createPage(
   client,
   dynamicContent,
   slug,
-  htmlContent,
-  customMeta,
+  bodyContent,
+  customMetaDesc,
   keywords,
   customFiledTitle
 ) {
   // Dynamically construct customFields array based on provided values
   const customFields = [];
-  if (customMeta)
-    customFields.push({ key: "_yoast_wpseo_metadesc", value: customMeta });
+  if (customMetaDesc)
+    customFields.push({ key: "_yoast_wpseo_metadesc", value: customMetaDesc });
   if (keywords) customFields.push({ key: "keywords", value: keywords });
   if (customFiledTitle)
     customFields.push({ key: "title", value: customFiledTitle });
@@ -25,7 +25,7 @@ async function createPage(
       {
         type: "page",
         title: slug,
-        content: htmlContent,
+        content: bodyContent,
         status: "publish",
         customFields,
       },
@@ -72,16 +72,16 @@ export const createPages = catchAysncErrors(async (req, res, next) => {
     password,
     pages,
     slug,
-    htmlContent = "",
-    custom_meta = "",
-    keywords = "",
+    bodyContent,
+    customMetaDesc = "",
     mainTitle = "",
+    keywords = "",
     customFiledTitle = "",
   } = req.body;
 
   // Validate mandatory parameters
-  if (!baseUrl || !username || !password || !pages || !slug) {
-    return next(new ErrorHandler("Missing mandatory parameters", 400));
+  if (!baseUrl || !username || !password || !pages || !slug || !bodyContent) {
+    return next(new ErrorHandler("Missing mandatory parametersss", 400));
   }
 
   const client = wordpress.createClient({
@@ -98,8 +98,8 @@ export const createPages = catchAysncErrors(async (req, res, next) => {
         client,
         dynamicContent,
         slug,
-        htmlContent,
-        custom_meta,
+        bodyContent,
+        customMetaDesc,
         keywords,
         customFiledTitle
       );
@@ -109,7 +109,7 @@ export const createPages = catchAysncErrors(async (req, res, next) => {
     }
     res.status(200).json({
       success: true,
-      message: `Following pages created successfully: ${NoOfPages.join(", ")}`,
+      message: `Following pages has been created successfully-> ${NoOfPages.join(", ")}`,
     });
   } catch (error) {
     next(error);

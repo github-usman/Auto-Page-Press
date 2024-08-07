@@ -60,7 +60,7 @@ const authSlice = createSlice({
       })
       .addCase(registerUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.userRole = action.payload.user.role;
+        state.userRole = action.payload.user?.roles[0];
         state.user = action.payload.user;
         state.isAuthenticated = true;
       })
@@ -74,7 +74,7 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.userRole = action.payload.user.role;
+        state.userRole = action.payload.user?.roles[0];
         state.user = action.payload.user;
         state.isAuthenticated = true;
       })
