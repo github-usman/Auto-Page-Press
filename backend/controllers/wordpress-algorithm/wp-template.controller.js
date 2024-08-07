@@ -121,7 +121,7 @@ export const createPages = catchAysncErrors(async (req, res, next) => {
           /\${dynamicContent}/g,
           dynamicContent
         );
-        await updatePageTitle(client, pageData.id, replacedMainTitle);
+        await updatePageTitle(client, pageData, replacedMainTitle);
       }
     }
     res.status(200).json({
