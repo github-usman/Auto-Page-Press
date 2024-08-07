@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { postService } from '../services/authService';
+import { postServiceWp } from '../services/authService';
 
 // CREATE NEW user -- USER
 export const createPages = createAsyncThunk(
-  'auth/register_user',
+  'wordpressForm/create_pages',
   async (queryParams, { rejectWithValue }) => {
     try {
-      return await postService('/wp-template/create', queryParams);
+      return await postServiceWp('/wp-template/create', queryParams);
     } catch (error) {
       return rejectWithValue(error.message || 'An error occurred');
     }
@@ -20,13 +20,14 @@ const initialState = {
     password: localStorage.getItem('password') || '',
   },
   metaDescAndContent: {
-    title: localStorage.getItem('title') || '',
+    mainTitle: localStorage.getItem('mainTitle') || '',
     slug: localStorage.getItem('slug') || '',
-    pages: [],
+    customMetaDesc: localStorage.getItem('customMetaDesc') || '',
+    pages: ['Dynamic pages example'],
   },
-  body: localStorage.getItem('body') || '',
+  bodyContent: localStorage.getItem('bodyContent') || '',
   advancedField: {},
-  reponses: null,
+  responses: null,
   isLoading: false,
   error: null,
 };
@@ -51,7 +52,7 @@ const wordpresFormSlice = createSlice({
       };
     },
     updateBody(state, action) {
-      state.body = action.payload;
+      state.bodyContent = action.payload;
     },
     updateAdvancedField(state, action) {
       state.advancedField = { ...state.advancedField, ...action.payload };
@@ -67,7 +68,7 @@ const wordpresFormSlice = createSlice({
       .addCase(createPages.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isAuthenticated = true;
-        state.reponses = action.payload;
+        state.responses = action.payload;
       })
       .addCase(createPages.rejected, (state, action) => {
         state.isLoading = false;

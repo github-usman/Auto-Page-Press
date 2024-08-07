@@ -38,7 +38,7 @@ const WpCredetials = ({ errorsDashb }) => {
         </div>
       </div>
 
-      <div
+      <form
         className={`flex flex-col gap-[1px] transition-max-height duration-1000 ease-in-out overflow-hidden ${openItem ? 'max-h-screen opacity-100 mb-1' : 'max-h-0 opacity-0'}`}
       >
         <div className="flex flex-col">
@@ -46,7 +46,7 @@ const WpCredetials = ({ errorsDashb }) => {
             Username
           </label>
           <input
-            type="text" // Corrected type from "username" to "text"
+            type="text"
             autoComplete="off"
             placeholder="wordpress username (required)"
             className="focus:outline-none bg-inputBg focus:border-dblue border-[#9a979792] border-[0.5px] rounded-lg p-2"
@@ -70,7 +70,7 @@ const WpCredetials = ({ errorsDashb }) => {
             Base Url
           </label>
           <input
-            type="text" // Corrected type from "baseUrl" to "text"
+            type="text"
             autoComplete="off"
             placeholder="wordpress baseUrl (required)"
             className="focus:outline-none bg-inputBg focus:border-dblue border-[#9a979792] border-[0.5px] rounded-lg p-2"
@@ -110,7 +110,7 @@ const WpCredetials = ({ errorsDashb }) => {
             {errorsDashb.password}
           </p>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

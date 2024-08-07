@@ -48,7 +48,7 @@ const MetaDescAndContent = ({ errorsDashb }) => {
         className={`flex flex-col gap-[1px] transition-max-height duration-1000 ease-in-out overflow-hidden ${openItem ? 'max-h-screen opacity-100 mb-1' : 'max-h-0 opacity-0'}`}
       >
         <div className="flex flex-col">
-          <label htmlFor="title" className="mb-1 font-semibold">
+          <label htmlFor="mainTitle" className="mb-1 font-semibold">
             Title
           </label>
           <input
@@ -56,16 +56,16 @@ const MetaDescAndContent = ({ errorsDashb }) => {
             autoComplete="off"
             placeholder="WordPress title (required)"
             className="focus:outline-none bg-inputBg focus:border-dblue border-[#9a979792] border-[0.5px] rounded-lg p-2"
-            value={metaDescAndContent.title}
+            value={metaDescAndContent.mainTitle}
             onChange={handleChange}
-            name="title"
-            id="title"
+            name="mainTitle"
+            id="mainTitle"
           />
           <p
-            className={`text-[12px] text-[red] opacity-${errorsDashb.title ? '100' : '0'} flex items-center gap-1 ps-2`}
+            className={`text-[12px] text-[red] opacity-${errorsDashb.mainTitle ? '100' : '0'} flex items-center gap-1 ps-2`}
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
-            {errorsDashb.title}
+            {errorsDashb.mainTitle}
           </p>
         </div>
 
@@ -88,6 +88,30 @@ const MetaDescAndContent = ({ errorsDashb }) => {
           >
             <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
             {errorsDashb.slug}
+          </p>
+        </div>
+        <div className="flex flex-col">
+          <label
+            htmlFor="customMetaDesc"
+            className="mb-1 font-semibold text-[#EEEEF0]"
+          >
+            customMetaDesc
+          </label>
+          <textarea
+            type="text"
+            autoComplete="off"
+            placeholder="Your Page meta Description (required)"
+            className="focus:outline-none bg-inputBg focus:border-dblue border-[#9a979792] border-[0.5px] rounded-lg p-2"
+            value={metaDescAndContent.customMetaDesc}
+            onChange={handleChange}
+            name="customMetaDesc"
+            id="customMetaDesc"
+          />
+          <p
+            className={`text-[12px] text-[red] opacity-${errorsDashb.customMetaDesc ? '100' : '0'} flex items-center gap-1 ps-2`}
+          >
+            <img src={warning} className="h-[12px] w-[12px]" alt="warning" />{' '}
+            {errorsDashb.customMetaDesc}
           </p>
         </div>
 
