@@ -95,7 +95,7 @@ const MetaDescAndContent = ({ errorsDashb }) => {
             htmlFor="customMetaDesc"
             className="mb-1 font-semibold text-[#EEEEF0]"
           >
-            customMetaDesc
+            meta description
           </label>
           <textarea
             type="text"
@@ -117,7 +117,7 @@ const MetaDescAndContent = ({ errorsDashb }) => {
 
         <div className="flex flex-col cursor-default">
           <a className="mb-1 font-semibold text-[#EEEEF0]">
-            Dynamic Pages Content
+            Dynamic Pages value
           </a>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
             {metaDescAndContent.pages.map((page, index) => (

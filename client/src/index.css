@@ -28,6 +28,11 @@ body {
   box-shadow: 0px 1px 6px 1.5px #000000b8;
 }
 
+.all__side__shadow_btn {
+  position: relative;
+  box-shadow: 0px 1px 6px 1.5px #d4d3d3b8;
+}
+
 .referal__benefits__shadow__all_program {
   box-shadow: 0px 1px 24.4px 1px #9a979729;
 }
@@ -37,6 +42,44 @@ body {
 }
 .conetentBg {
   color: #282828;
+}
+
+/* input property setup */
+.select_dynamic_content {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  padding: 1px 0.5rem;
+  position: relative;
+}
+
+.select_dynamic_content .hidden-dynamic-text {
+  color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+}
+
+.select_dynamic_content .select_dynamic_content_inner {
+  color: black;
+  display: inline;
+}
+
+.select_dynamic_content::before {
+  content: '$';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+}
+
+.select_dynamic_content::after {
+  content: '}';
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: transparent;
 }
 
 /* tailwind */
