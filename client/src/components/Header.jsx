@@ -108,7 +108,14 @@ const Header = () => {
         ) : (
           // non login user
           <nav>
-            <div className=" items-center text-[#c3c3c3]  gap-2 hidden md:flex">
+            <div className=" items-center text-[#c3c3c3]  gap-3 hidden md:flex">
+              <Link
+                to={'/dashboard'}
+                className="hover:text-white"
+                onClick={handToggleNav}
+              >
+                Create Pages
+              </Link>
               <Link to={'/about-us'} className="hover:text-white">
                 About Us
               </Link>
@@ -140,6 +147,13 @@ const Header = () => {
                 className={`absolute left-0 right-0 bg-conetentBg rounded-b-lg max-w-[720px] w-[95%] mx-auto top-[49px] pb-[1rem] transition-opacity duration-700 ${isOpenNav ? 'opacity-100 visible' : 'opacity-0 invisible'} border-[1px] border-t-0 border-[#9a979789]`}
               >
                 <div className="flex items-center text-[#9a9797] flex-col gap-2">
+                  <Link
+                    to={'/dashboard'}
+                    className="hover:text-white"
+                    onClick={handToggleNav}
+                  >
+                    Create Pages
+                  </Link>
                   <Link
                     to={'/about-us'}
                     className="hover:text-white"
